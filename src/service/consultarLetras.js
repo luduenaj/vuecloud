@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const apiClient =axios .create({
-  baseURL:'https://api.lyrics.ovh/v1/',
+  baseURL:'https://api.lyrics.ovh/v1',
   withCredentials:false,
   headers:{
     Accept:'application/json',
@@ -10,7 +10,7 @@ const apiClient =axios .create({
 })
 
 export default {
-  getCanciones(artista,cancion){
+  getLetras(artista,cancion){
     
     return apiClient.get(`/${artista}/${cancion}`);
   }

@@ -11,7 +11,9 @@ const apiClient =axios .create({
 
 export default {
   getCanciones(cancion){
-    
     return apiClient.get('https://musicbrainz.org/ws/2/recording?fmt=json&query='+cancion);
+  },
+  getDiscografia(id_artista){
+    return apiClient.get('https://musicbrainz.org/ws/2/release?artist='+ id_artista+'&fmt=json&type=album');
   }
 }
